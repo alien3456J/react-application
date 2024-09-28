@@ -48,7 +48,7 @@ setTodos(currentTodos => {
       type="text" 
       id="text" />
     </div>
-    <button className="btn">Add</button>
+    <button className="btn" disabled={!newItem.trim()}>Add</button>
   </form>
   <h1 className="header">Todo List</h1>
   <ul className="list">
