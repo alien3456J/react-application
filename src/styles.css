@@ -3,11 +3,14 @@
   box-sizing: border-box;
 }
 
-body {
-  max-width: 400px;
-  padding: 1rem;
-  margin: 0 auto;
-  transition: background 1s, color 1.5s; /* Smooth transition */
+/* Ensures dark background covers the whole page */
+html, body {
+  background-color: #021f57; /* Dark background */
+  color: hsl(200, 100%, 90%); /* Light text color */
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* Light Theme */
@@ -29,12 +32,6 @@ body {
   color: #333333; /* Light input text color */
 }
 
-/* Dark Theme */
-.dark-theme {
-  background: #333333; /* Dark background */
-  color: hsl(200, 100%, 90%); /* Light text color */
-}
-
 .dark-theme .btn {
   background: hsl(200, 100%, 50%, 0.1);
   border: 1px solid hsl(200, 100%, 50%);
@@ -46,6 +43,92 @@ body {
   border: 1px solid hsl(200, 100%, 40%);
   background: hsl(200, 100%, 30%); /* Dark input background */
   color: hsl(200, 100%, 90%); /* Light input text color */
+}
+
+/* Title Bar for Page Title */
+.title-bar {
+  background-color: #004d9a; /* Dark blue */
+  padding: 0px;
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Center items vertically */
+  height: 80px; /* Set a fixed height */
+  width: 100%; /* Full width */
+  position: fixed; /* Make it fixed at the top */
+  top: 0; /* Stick to the top */
+  left: 0; /* Align to the left */
+  z-index: 1000; /* Ensure it stays above other content */
+}
+
+/* Center the title independently of the buttons */
+.title-container {
+  position: absolute; /* Use absolute positioning */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust to keep it centered */
+}
+
+.page-title {
+  color: white;
+  font-size: 2.5rem;
+  margin: 10px;
+}
+
+/* Button Container */
+.button-container {
+  display: flex; /* Arrange buttons in a row */
+  align-items: center; /* Center buttons vertically */
+  margin-left: 20px; /* Add margin to separate from the left edge */
+}
+
+.btn-discover,
+.btn-favorite {
+  background-color: hsl(200, 100%, 50%); /* Button color */
+  color: white; /* Text color */
+  border: none; /* Remove border */
+  border-radius: 100px; /* Pill shape */
+  padding: 10px 20px; /* Padding for button size */
+  margin: 10px; /* Margin of 5px on all sides */
+  cursor: pointer; /* Change cursor on hover */
+}
+
+.btn-favorite {
+  margin-left: 5px; /* Space between Discover and Favorite buttons */
+}
+
+/* Add these styles for the new buttons */
+.btn-signup,
+.btn-signin {
+  background-color: hsl(200, 100%, 50%); /* Button color */
+  color: white; /* Text color */
+  border: none; /* Remove border */
+  border-radius: 100px; /* Pill shape */
+  padding: 10px 20px; /* Padding for button size */
+  margin: 10px; /* Margin of 5px on all sides */
+  cursor: pointer; /* Change cursor on hover */
+}
+
+.sign-up, .sign-in {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  height: 80vh; /* Use a portion of the viewport height */
+}
+
+/* Right button container for sign up and sign in buttons */
+.button-container.right {
+  margin-left: auto; /* Pushes it to the right */
+  display: flex; /* Arrange buttons in a row */
+  align-items: center; /* Center buttons vertically */
+}
+
+.btn-go-back {
+  background-color: hsl(200, 100%, 50%); /* Button color */
+  color: white; /* Text color */
+  border: none; /* Remove border */
+  border-radius: 100px; /* Pill shape */
+  padding: 10px 20px; /* Padding for button size */
+  cursor: pointer; /* Change cursor on hover */
+  margin-top: 20px; /* Space above the button */
 }
 
 /* Other styles */
@@ -73,6 +156,7 @@ body {
   color: hsl(0, 100%, 40%);
 }
 
+/* Additional styles for the header, lists, and inputs */
 .header {
   font-size: 1.5rem;
   margin-top: 1.5rem;
